@@ -1,4 +1,4 @@
-# Members_db (PHP)
+# Members_db (Php)
 
 ## Table of Contents
 * [General info](#general-info)
