@@ -8,49 +8,37 @@
 * [Improvements](#improvements)
 
 ## General info
-An API that reads from a database table (vehicles.db) and returns all the rows in the JSON format. This app uses Node, Express, Sequalize and Sqlite3.
+A database that stores information about its members. This app uses Php and MySQL.
 
 ## Technologies
 Project is created with:
-* Node version: v14.15.0
-* Visual Studio Code version: 1.60.2
-* Windows OS: Windows_NT x64 19043.1237
+* Php version: 7.4.3
+* Visual Studio Code version: 1.62.0
+* Windows OS: Windows_NT x64 20H2
 
-## Setup
-### Installing Node 
-To run this project, download and install Node from Node.js website (https://nodejs.org/en/)
+## Setup 
+To run this project, you will need Php and XAMPP. To set up your Php working environment follow the instructions here (https://www.sitepoint.com/how-to-install-php-on-windows/). XAMMP can be downloaded here (https://www.apachefriends.org/index.html)
 
-### Quick Start
-To install dependencies run the following in the terminal: 
+### Start
+1. Include the repository in the XAMMP directory (xampp\htdocs). 
 
-```
-npm install
-```
-Server on localhost:3000
-```
-npm start
-```
-Dev Server (Nodemon)
-```
-npm run dev
-```
+2. Launch XAMPP control panel and start Apache and MySQL.
+
+3. In the browser type http://localhost/phpmyadmin and create a members_db databse. The databse uses two tables (school and members):
+
+CREATE TABLE schools ( id INT NOT NULL AUTO_INCREMENT, school VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id));
+
+CREATE TABLE members ( id INT NOT NULL AUTO_INCREMENT, school_id INT NULL, name VARCHAR(255), email VARCHAR(255), PRIMARY KEY(id), FOREIGN KEY(school_id) REFERENCES schools(id)), CONSTRAINT UC_Members UNIQUE (id, school_id);
+  
+4. In the browser type http://localhost/members/public/members/index.php
 
 ## Results 
 
-I am running JSON Viewer Pro (chrome extension)
-
-Typing http://localhost:3000/vehicles will give the following result
-
-![Result](images/1.PNG "Main Result")
-
-Typing http://localhost:3000/vehicles/1 will give the following result
-
-![Result](images/2.PNG "Result by :id")
-
-Typing http://localhost:3000/vehicles/?q=b will give the following result
-
-![Result](images/3.PNG "Result by make")
+* Can add members to a pool of schools 
+* Can add a single member to more than one school 
+* Can delete members
+* Can search members by schools 
 
 ## Improvements
-* Only a single CRUD action has been implemented. To develop the API further other CRUD actions should be implemented.
-*  Sqlite3 database was used for the project. For the future either MySQL or PostgreSQL should be used. Both are easily scalable and suitable for big databases.
+* MVC architecture could be improved 
+* My local machine didn't allow me to run the db on the localhost. Further, inspection is required. 
