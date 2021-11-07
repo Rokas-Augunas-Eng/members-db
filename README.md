@@ -32,9 +32,9 @@ CREATE TABLE members ( id INT NOT NULL AUTO_INCREMENT, school_id INT NULL, name 
 
 4. Dummy Data
 
-INSERT INTO `schools` (`id`, `school`) VALUES (NULL, 'King’s College London Maths School'), (NULL, 'Westminster School'), (NULL, 'City of London School'), (NULL, 'Westminster Tutors'), (NULL, 'Francis Holland School, Regent’s Park');
+INSERT INTO 'schools' ('id', 'school') VALUES (NULL, 'King’s College London Maths School'), (NULL, 'Westminster School'), (NULL, 'City of London School'), (NULL, 'Westminster Tutors'), (NULL, 'Francis Holland School, Regent’s Park');
 
-INSERT INTO `members` (`id`, `name`, `email`, `school_id`) VALUES (NULL, 'tom', 'tom@tom.com', '1'), (NULL, 'igor', 'igor@igor.com', '2'), (NULL, 'josh', 'josh@josh.com', '3'), (NULL, 'greg', 'greg@greg.com', '4'), (NULL, 'sam', 'sam@sam.com', '1'), (NULL, 'david', 'david@david.com', '2')
+INSERT INTO 'members' ('id', 'name', 'email', 'school_id') VALUES (NULL, 'tom', 'tom@tom.com', '1'), (NULL, 'igor', 'igor@igor.com', '2'), (NULL, 'josh', 'josh@josh.com', '3'), (NULL, 'greg', 'greg@greg.com', '4'), (NULL, 'sam', 'sam@sam.com', '1'), (NULL, 'david', 'david@david.com', '2')
   
 5. In the browser type http://localhost/members/public/members/index.php
 
