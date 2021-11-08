@@ -21,8 +21,6 @@ try {
       $query->execute();
       $id = $query->fetchAll(PDO::FETCH_ASSOC);
 
-      
-
       $statement = $pdo->prepare('INSERT INTO members (name, email, school_id) VALUES (:name, :email, :school_id)');
 
       $statement->bindValue(':name', $name);
