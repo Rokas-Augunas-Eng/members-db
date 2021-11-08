@@ -29,7 +29,7 @@ try {
       $statement->bindValue(':email', $email);
       $statement->bindValue(':school_id', (int)$id[0]["id"]);
       $statement->execute();
-      // header('Location: index.php');
+      header('Location: index.php');
     }
   }
 } catch (PDOException $e) {;

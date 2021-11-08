@@ -54,5 +54,6 @@ if ($search) {
     </tbody>
   </table>
 </div>
+
 </body>
 </html>
